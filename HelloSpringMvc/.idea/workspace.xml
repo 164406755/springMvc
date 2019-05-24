@@ -7,8 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90ff9d12-8e61-4464-93b3-8c0853179ba6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springMvcPractice/note/精通springMvc4学习.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../springMvcPractice/note/精通springMvc4学习.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springMvcPractice/src/main/java/springMvcPractice/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springMvcPractice/src/main/java/springMvcPractice/controller/HelloController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -105,6 +105,7 @@
       <find>init</find>
       <find>init(</find>
       <find>DispatcherServlet</find>
+      <find>ErrorMvcAutoConfiguration</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -457,15 +458,16 @@
       <workItem from="1558576303831" duration="51000" />
       <workItem from="1558576398820" duration="1199000" />
       <workItem from="1558677000704" duration="214000" />
-      <workItem from="1558682867657" duration="1215000" />
+      <workItem from="1558682867657" duration="1852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32969000" />
+    <option name="totallyTimeSpent" value="33606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2730711" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
