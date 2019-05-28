@@ -4,10 +4,16 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'io.spring.dependency-management'
+
 
 group = 'springMvcPractice'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
@@ -16,4 +22,12 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	compile 'org.webjars:materializecss:0.96.0'
+	compile 'org.webjars:jquery:2.1.4'
+}
+
+jar {
+	baseName = 'springMvcPractice'
+	version = '0.0.1-SNAPSHOT'
 }

@@ -1,0 +1,56 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'springMvcPractice'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile 'org.springframework.social:spring-social-core:1.1.6.RELEASE'
+	compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+}
+
+
+
+buildscript { 
+ ext {
+springBootVersion = '1.2.5.RELEASE' 
+ }
+ repositories { 
+mavenCentral() 
+ }
+ dependencies { 
+classpath("org.springframework.boot:spring-boot-gradle?plugin:${springBootVersion}") 
+classpath("io.spring.gradle:dependency-management?plugin:0.5.1.RELEASE") 
+ }
+}
+
+
+apply plugin: 'java' 
+apply plugin: 'eclipse' 
+apply plugin: 'idea' 
+apply plugin: 'spring-boot'
+apply plugin: 'io.spring.dependency-management'
+
+jar { 
+ baseName = 'springMvcPractice' 
+ version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8 
+targetCompatibility = 1.8 
+
+repositories { 
+ mavenCentral() 
+}
+
+
