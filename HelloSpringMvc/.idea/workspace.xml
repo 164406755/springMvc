@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90ff9d12-8e61-4464-93b3-8c0853179ba6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../springMvcPractice/note/精通springMvc4学习.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../springMvcPractice/note/精通springMvc4学习.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springMvcPractice/src/main/java/springMvcPractice/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springMvcPractice/src/main/java/springMvcPractice/controller/HelloController.java" afterDir="false" />
-    </list>
+    <list default="true" id="90ff9d12-8e61-4464-93b3-8c0853179ba6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -458,12 +455,12 @@
       <workItem from="1558576303831" duration="51000" />
       <workItem from="1558576398820" duration="1199000" />
       <workItem from="1558677000704" duration="214000" />
-      <workItem from="1558682867657" duration="1852000" />
+      <workItem from="1558682867657" duration="1891000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33606000" />
+    <option name="totallyTimeSpent" value="33645000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
