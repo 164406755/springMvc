@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="layout/default">
+      layout:decorator="layout/profile">
 <head lang="en">
     <title>Your profile</title>
 </head>
 <body>
-
+<ul id="lang-dropdown" >
+    <li><a href="?lang=en_US">English</a></li>
+    <li><a href="?lang=fr">French</a></li>
+</ul>
 
 <div class="row" layout:fragment="content">
-    <h2 class="indigo-text center">Personal info</h2>
+    <h2 class="indigo-text center"  >Personal info</h2>
     <form th:action="@{/profile}" th:object="${profileForm}" method="post" class="col m8 s12 offset-m2">
      <!--   <ul th:if="${#fields.hasErrors('*')}" class="errorlist">
             <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input
@@ -17,13 +20,13 @@
         </ul>-->
         <div class="row">
             <div class="input-field col s6">
-                <input th:field="${profileForm.twitterHandle}"
+                <input th:field="${profileForm.twitterHandle}"  required="required"
                        id="twitterHandle" type="text"  th:errorclass="invalid"/>
                 <label for="twitterHandle">Last Name</label>
             </div>
             <div th:errors="*{twitterHandle}" class="redtext">Error</div>
             <div class="input-field col s6">
-                <input th:field="${profileForm.email}" id="email"
+                <input th:field="${profileForm.email}"  required="required" id="email"
                        type="text"  th:errorclass="invalid" />
                 <label for="email">Email</label>
                 <div th:errors="*{email}" class="red-text">Error</div>
@@ -31,7 +34,7 @@
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input th:field="${profileForm.birthDate}"
+                <input th:field="${profileForm.birthDate}"  required="required"
                        id="birthDate" type="text"  th:errorclass="invalid" th:placeholder="${dateFormat}"/>
                 <label for="birthDate">Birth Date</label>
                 <div th:errors="*{birthDate}" class="red-text">Error</div>

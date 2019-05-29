@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
@@ -49,5 +50,12 @@ public class HelloController {
         }
         redirectAttributes.addAttribute("search", search);
         return "redirect:result";
+    }
+    @RequestMapping("/default")
+    public String getDefaultPage(){
+//        ModelAndView mvs = new ModelAndView();
+//        mvs.addObject("default", "/layout/default");
+//        return mvs;
+        return "/layout/default";
     }
 }
