@@ -99,6 +99,7 @@ public class PictureUploadController {
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
@@ -114,14 +115,18 @@ import springMvcPractice.config.PictureUploadProperties;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URLConnection;
+import java.util.Locale;
+
 @Controller
 public class PictureUploadController {
     private final Resource picturesDir;
     private final Resource anonymousPicture;
+    private final MessageSource messageSource;
     @Autowired
-    public PictureUploadController(PictureUploadProperties uploadProperties) {
+    public PictureUploadController(PictureUploadProperties uploadProperties, MessageSource messageSource) {
         picturesDir = uploadProperties.getUploadPath();
         anonymousPicture = uploadProperties.getAnonymousPicture();
+        this.messageSource = messageSource;
     }
 //    @RequestMapping(value = "/uploadedPicture")
 //    public void getUploadedPicture(HttpServletResponse response)
@@ -133,8 +138,7 @@ public class PictureUploadController {
 
 
 
-    public static final Resource PICTURES_DIR = new
-            FileSystemResource("./pictures");
+    public static final Resource PICTURES_DIR = new   FileSystemResource("./pictures");
     @RequestMapping("upload")
     public String uploadPage() {
         return "profile/uploadPage";
@@ -142,12 +146,13 @@ public class PictureUploadController {
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public String onUpload(MultipartFile file, RedirectAttributes
             redirectAttrs) throws IOException {
-        if (file.isEmpty() || !isImage(file)) {
-            redirectAttrs.addFlashAttribute("error", "Incorrect file. Please upload a picture.");
-            return "redirect:/upload";
-        }
-        copyFileToPictures(file);
-        return "profile/uploadPage";
+//        if (file.isEmpty() || !isImage(file)) {
+//            redirectAttrs.addFlashAttribute("error", "Incorrect file. Please upload a picture.");
+//            return "redirect:/upload";
+//        }
+//        copyFileToPictures(file);
+//        return "profile/uploadPage";
+        throw new IOException("Some message");
     }
     private Resource copyFileToPictures(MultipartFile file) throws
             IOException {
@@ -177,10 +182,23 @@ public class PictureUploadController {
                 getOutputStream());
     }
 
+//    @ExceptionHandler(IOException.class)
+//    public ModelAndView handleIOException(IOException exception) {
+//        ModelAndView modelAndView = new ModelAndView("profile/uploadPage");
+//                modelAndView.addObject("error", exception.getMessage());
+//        return modelAndView;
+//    }
+
     @ExceptionHandler(IOException.class)
-    public ModelAndView handleIOException(IOException exception) {
+    public ModelAndView handleIOException(Locale locale) {
         ModelAndView modelAndView = new ModelAndView("profile/uploadPage");
-                modelAndView.addObject("error", exception.getMessage());
+                modelAndView.addObject("error", messageSource.getMessage("upload.io.exception", null, locale));
+        return modelAndView;
+    }
+    @RequestMapping("uploadError")
+    public ModelAndView onUploadError(Locale locale) {
+        ModelAndView modelAndView = new ModelAndView("profile/uploadPage");
+                modelAndView.addObject("error", messageSource.getMessage("upload.file.too.big", null, locale));
         return modelAndView;
     }
 // The rest of the code remains the same
