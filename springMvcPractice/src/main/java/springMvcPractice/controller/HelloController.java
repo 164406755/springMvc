@@ -13,7 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 
-@Controller
+//@Controller
 public class HelloController {
 
  /*   @RequestMapping("/")
